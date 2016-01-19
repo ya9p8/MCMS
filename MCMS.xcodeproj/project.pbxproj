@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C17D2791C4ED58D0046687B /* CreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C17D2781C4ED58D0046687B /* CreatureViewController.m */; };
 		DBC5CD881C4EC8680000EA1A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC5CD871C4EC8680000EA1A /* main.m */; };
 		DBC5CD8B1C4EC8680000EA1A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC5CD8A1C4EC8680000EA1A /* AppDelegate.m */; };
 		DBC5CD8E1C4EC8680000EA1A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC5CD8D1C4EC8680000EA1A /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C17D2771C4ED58D0046687B /* CreatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureViewController.h; sourceTree = "<group>"; };
+		4C17D2781C4ED58D0046687B /* CreatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureViewController.m; sourceTree = "<group>"; };
 		DBC5CD831C4EC8680000EA1A /* MCMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC5CD871C4EC8680000EA1A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DBC5CD891C4EC8680000EA1A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,6 +68,8 @@
 				DBC5CD8A1C4EC8680000EA1A /* AppDelegate.m */,
 				DBC5CDA01C4EC8C90000EA1A /* MagicalCreature.h */,
 				DBC5CDA11C4EC8C90000EA1A /* MagicalCreature.m */,
+				4C17D2771C4ED58D0046687B /* CreatureViewController.h */,
+				4C17D2781C4ED58D0046687B /* CreatureViewController.m */,
 				DBC5CD8C1C4EC8680000EA1A /* ViewController.h */,
 				DBC5CD8D1C4EC8680000EA1A /* ViewController.m */,
 				DBC5CD8F1C4EC8680000EA1A /* Main.storyboard */,
@@ -158,6 +163,7 @@
 				DBC5CD8E1C4EC8680000EA1A /* ViewController.m in Sources */,
 				DBC5CDA21C4EC8C90000EA1A /* MagicalCreature.m in Sources */,
 				DBC5CD8B1C4EC8680000EA1A /* AppDelegate.m in Sources */,
+				4C17D2791C4ED58D0046687B /* CreatureViewController.m in Sources */,
 				DBC5CD881C4EC8680000EA1A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +311,7 @@
 				DBC5CD9C1C4EC8680000EA1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

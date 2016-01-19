@@ -8,10 +8,13 @@
 
 #import "ViewController.h"
 #import "MagicalCreature.h"
+#import "CreatureViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property NSMutableArray* creatures;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITableView *monsterTableView;
 
 @end
 
@@ -28,6 +31,12 @@
     self.creatures = [NSMutableArray arrayWithObjects:magicalCreatureOne, magicalCreatureTwo, magicalCreatureThree, nil];
 }
 - (IBAction)onAddButtonTapped:(UIButton *)sender {
+    
+    MagicalCreature *newCreature = [[MagicalCreature alloc]initWithName:self.nameTextField.text];
+    [self.creatures insertObject:newCreature atIndex:0];
+    [self.monsterTableView reloadData];
+    [self.nameTextField resignFirstResponder];
+    self.nameTextField.text = @"";
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -42,6 +51,11 @@
     
     
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CreatureViewController *cvc = segue.destinationViewController;
+    cvc.creature = [self.creatures objectAtIndex:[self.monsterTableView indexPathForSelectedRow].row];
 }
 
 
