@@ -18,6 +18,7 @@
         self.name = name;
         self.details = @"No details";
         self.image = [UIImage imageNamed:@"no_image"];
+        self.accessories = [NSMutableArray arrayWithArray:@[]];
     }
     return self;
 }

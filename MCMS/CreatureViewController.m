@@ -8,7 +8,7 @@
 
 #import "CreatureViewController.h"
 
-@interface CreatureViewController ()
+@interface CreatureViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailsTextView;
@@ -29,11 +29,21 @@
 
 
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated {
-    NSLog(@"Random string literal");
+   // NSLog(@"Random string literal");
     self.nameTextField.hidden = !editing;
      [super setEditing:editing animated:animated];
     
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"accessoryCell"];
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.creature.accessories.count;
+}
 
 @end

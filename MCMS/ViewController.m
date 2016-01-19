@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MagicalCreature.h"
 #import "CreatureViewController.h"
+#import "BattleViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -54,9 +55,24 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    CreatureViewController *cvc = segue.destinationViewController;
-    cvc.creature = [self.creatures objectAtIndex:[self.monsterTableView indexPathForSelectedRow].row];
+    
+    if([segue.identifier isEqualToString:@"detailSegue"])
+    {
+        CreatureViewController *cvc = segue.destinationViewController;
+        cvc.creature = [self.creatures objectAtIndex:[self.monsterTableView indexPathForSelectedRow].row];
+    }
+    else
+    {
+        BattleViewController* battleVC = segue.destinationViewController;
+        battleVC.battleCreatures = [NSArray arrayWithArray:self.creatures];
+        
+    }
 }
 
+- (IBAction)onBattleButtonTapped:(id)sender
+{
+    
+    
+}
 
 @end
