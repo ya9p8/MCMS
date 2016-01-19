@@ -24,11 +24,14 @@
     // Do any additional setup after loading the view.
     
     //NSLog(self.battleCreatures.description);
+    int firstCreature = [self getRandomCreature:self.battleCreatures];
+    MagicalCreature* creatureUno = [self.battleCreatures objectAtIndex:firstCreature];
     
-    MagicalCreature* creatureUno = [self.battleCreatures objectAtIndex:[self getRandomCreature:self.battleCreatures]];
     NSMutableArray *remainingCreatures = [NSMutableArray arrayWithArray:self.battleCreatures];
-    [remainingCreatures removeObject:creatureUno];
-     MagicalCreature* creatureDos = [self.battleCreatures objectAtIndex:[self getRandomCreature:remainingCreatures]];
+    
+    [remainingCreatures removeObjectAtIndex:firstCreature];
+    
+     MagicalCreature* creatureDos = [remainingCreatures objectAtIndex:[self getRandomCreature:remainingCreatures]];
     
     self.creatureImageOne.image = creatureUno.image;
     self.creatureImageTwo.image = creatureDos.image;

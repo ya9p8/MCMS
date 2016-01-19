@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "MagicalCreature.h"
 #import "CreatureViewController.h"
 #import "BattleViewController.h"
 
@@ -69,10 +68,25 @@
     }
 }
 
+-(void)updateCreature:(MagicalCreature *)creature {
+    [self.creatures removeObject:creature];
+    [self.creatures addObject:creature];
+    
+    [self.monsterTableView reloadData];
+}
+
 - (IBAction)onBattleButtonTapped:(id)sender
 {
     
     
 }
+
+-(IBAction)unwind:(UIStoryboardSegue *)sender {
+    CreatureViewController *cvc = sender.sourceViewController;
+    [self.creatures removeObject:cvc.creature];
+    [self.creatures insertObject:cvc.creature atIndex:0];
+    [self.monsterTableView reloadData];
+}
+
 
 @end

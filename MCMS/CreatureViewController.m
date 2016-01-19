@@ -25,6 +25,7 @@
     self.nameLabel.text = self.creature.name;
     self.detailsTextView.text = self.creature.details;
     self.monsterImageView.image = self.creature.image;
+    self.navigationItem.hidesBackButton = YES;
 }
 
 
@@ -32,8 +33,18 @@
    // NSLog(@"Random string literal");
     self.nameTextField.hidden = !editing;
      [super setEditing:editing animated:animated];
+    if (!editing) {
+        self.nameLabel.text = self.nameTextField.text;
+        self.creature.name = self.nameTextField.text;
+    }
+}
+
+- (IBAction)onBackTapped:(id)sender {
+    
+    
     
 }
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -44,6 +55,10 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.creature.accessories.count;
+}
+
+-(void)unwindForSegue:(UIStoryboardSegue *)unwindSegue towardsViewController:(UIViewController *)subsequentVC {
+    NSLog(@"BACK");
 }
 
 @end
