@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZUw-Dn-8PS" id="jaY-HD-XF3">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -87,26 +87,38 @@
                         <viewControllerLayoutGuide type="top" id="qwu-9g-brE"/>
                         <viewControllerLayoutGuide type="bottom" id="KsQ-kB-ecI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Q7f-lu-tqR">
+                    <view key="view" hidden="YES" contentMode="scaleToFill" id="Q7f-lu-tqR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATURE NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQF-Ac-Fjs">
-                                <rect key="frame" x="231.5" y="289.5" width="137" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CREATURE NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQF-Ac-Fjs">
+                                <rect key="frame" x="232" y="290" width="137" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-Ty-1TX">
+                                <rect key="frame" x="164" y="285" width="273" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3xY-lr-I8f"/>
+                                    <constraint firstAttribute="width" constant="273" id="mFB-AT-0gD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SQF-Ac-Fjs" firstAttribute="centerY" secondItem="Q7f-lu-tqR" secondAttribute="centerY" id="Ynt-A9-x15"/>
                             <constraint firstItem="SQF-Ac-Fjs" firstAttribute="centerX" secondItem="Q7f-lu-tqR" secondAttribute="centerX" id="kfF-ox-06z"/>
+                            <constraint firstItem="SQF-Ac-Fjs" firstAttribute="centerY" secondItem="9VX-Ty-1TX" secondAttribute="centerY" id="o2i-ee-HAv"/>
+                            <constraint firstItem="SQF-Ac-Fjs" firstAttribute="centerX" secondItem="9VX-Ty-1TX" secondAttribute="centerX" id="oVq-Aa-iLW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="bg0-8r-IwW"/>
                     <connections>
                         <outlet property="creatureNameLabel" destination="SQF-Ac-Fjs" id="3BR-Ar-31c"/>
+                        <outlet property="nameTextField" destination="9VX-Ty-1TX" id="uws-4s-czO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJH-6L-N4y" userLabel="First Responder" sceneMemberID="firstResponder"/>

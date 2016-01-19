@@ -10,6 +10,7 @@
 
 @interface CreatureViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *creatureNameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
 @end
 
@@ -21,6 +22,13 @@
     self.navigationItem.title= self.creature.name;
 }
 
+
+//-(void)setEditing:(BOOL)editing animated:(BOOL)animated {
+//    NSLog(@"Random string literal");
+//    self.nameTextField.hidden = !editing;
+//     [super setEditing:editing animated:animated];
+//    
+//}
 
 
 @end
