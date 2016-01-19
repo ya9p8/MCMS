@@ -16,6 +16,8 @@
     self = [super init];
     if (self) {
         self.name = name;
+        self.details = @"No details";
+        self.image = [UIImage imageNamed:@"no_image"];
     }
     return self;
 }

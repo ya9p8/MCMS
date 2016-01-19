@@ -48,7 +48,7 @@
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"monsterCell"];
     MagicalCreature* creature = [self.creatures objectAtIndex:indexPath.row];
     cell.textLabel.text = creature.name;
-    
+    cell.detailTextLabel.text = creature.details;
     
     return cell;
 }

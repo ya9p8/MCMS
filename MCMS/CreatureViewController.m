@@ -9,8 +9,10 @@
 #import "CreatureViewController.h"
 
 @interface CreatureViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *creatureNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UITextView *detailsTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *monsterImageView;
 
 @end
 
@@ -19,16 +21,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.navigationItem.title= self.creature.name;
+    //self.navigationItem.title= self.creature.name;
+    self.nameLabel.text = self.creature.name;
+    self.detailsTextView.text = self.creature.details;
+    self.monsterImageView.image = self.creature.image;
 }
 
 
-//-(void)setEditing:(BOOL)editing animated:(BOOL)animated {
-//    NSLog(@"Random string literal");
-//    self.nameTextField.hidden = !editing;
-//     [super setEditing:editing animated:animated];
-//    
-//}
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    NSLog(@"Random string literal");
+    self.nameTextField.hidden = !editing;
+     [super setEditing:editing animated:animated];
+    
+}
 
 
 @end
